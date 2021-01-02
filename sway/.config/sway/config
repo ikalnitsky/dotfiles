@@ -83,7 +83,7 @@
     $mod+Shift+9 move container to workspace 9
     $mod+Shift+0 move container to workspace 10
 
-    $mod+r mode "resize"
+    $mod+shift+r mode "resize"
   }
 
   mode "resize" {
@@ -141,6 +141,37 @@
     set $nord13 #ebcb8b
     set $nord14 #a3be8c
     set $nord15 #b48ead
+
+  bar {
+    position top
+    status_command i3status-rs
+    tray_output none
+    status_padding 0
+    status_edge_padding 0
+    height 32
+    colors {
+      background $nord00
+      statusline $nord10
+      separator $nord07
+      inactive_workspace $nord00 $nord00 $nord04
+      focused_workspace $nord00 $nord01 $nord04
+      active_workspace $nord00 $nord01 $nord04
+      binding_mode $nord06 $nord06 $nord00
+
+       # background <color>
+       # statusline <color>
+       # separator <color>
+       # focused_background <color>
+       # focused_statusline <color>
+       # focused_separator <color>
+       # focused_workspace <border> <background> <text>
+       # active_workspace <border> <background> <text>
+       # inactive_workspace <border> <background> <text>
+       # urgent_workspace <border> <background> <text>
+       # binding_mode <border> <background> <text>
+
+    }
+  }
 
   #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
   client.focused          $nord11     $nord00     $nord04     $nord11     $nord11
